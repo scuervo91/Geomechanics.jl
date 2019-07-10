@@ -1,5 +1,9 @@
 module Geomechanics
 
-greet() = print("Hello World!")
+using RecipesBase
+using Plots
+
+include("Zobackogram.jl")
+
 
 end # module
