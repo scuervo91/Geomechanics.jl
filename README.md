@@ -20,8 +20,16 @@ Geomechanics.jl is a package that allows to make Geomechanics analysis focused o
 
 ## Stress State
 
-By giving
+By giving the pressure gradient in Psi/ft of the vertical stress, pore pressure and friction coefficient (Sv, Pp, μ) you can plot a zobackogram which shows the range of stresses.
+
+### Example
+
 ```julia
-p1=zobackogram(1.0, 0.433, 0.6, title="Stress State")
+using Geomechanics
+
+Sv=1.0
+Pp=0.433
+μ=0.6
+p1=zobackogram(Sv,Pp,μ, title="Stress State")
 ```
 <img src="Geomechanics_EQ1.PNG"><br>
