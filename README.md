@@ -39,7 +39,7 @@ p1=zobackogram(Sv,Pp,μ, title="Stress State")
 
 ## Ternary Plots
 
-You can plot the composition of the rocks by using a ternary plot recipe: 
+You can plot the composition of the rocks by using a ternary plot recipe:
 
 ```julia
 
@@ -55,3 +55,9 @@ p2=triplot(rand(20,3),1,Norm=true)
 plot(p1,p2,layout=(1,2), size=(900,400))
 ```
 <img src="Geomechanics_EQ2.PNG"><br>
+
+
+## References
+
+Zoback, Mark D.. Reservoir Geomechanics. Cambridge University Press, 2014.
+Zoback, M. D., & Kohli, A. H. (2019). Unconventional reservoir geomechanics shale gas, tight oil and induced seismicity. Cambridge University Press.
