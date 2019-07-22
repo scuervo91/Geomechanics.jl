@@ -24,6 +24,8 @@ By giving the pressure gradient in Psi/ft of the vertical stress, pore pressure 
 
 ### Example
 
+
+## Stress Polygon
 ```julia
 using Geomechanics
 
@@ -33,3 +35,23 @@ Pp=0.433
 p1=zobackogram(Sv,Pp,μ, title="Stress State")
 ```
 <img src="Geomechanics_EQ1.PNG"><br>
+
+
+## Ternary Plots
+
+You can plot the composition of the rocks by using a ternary plot recipe: 
+
+```julia
+
+SampleA=[.16,0.19,0.65]
+SampleB=[0.38,0.55,0.07]
+SampleC=[0.3,0.4,0.3]
+Data=[SampleA';SampleB']
+
+p1=triplot(Data,1,NodeName=["Clay","Quartz","Calcite"])
+p1=triplot!(SampleC',1, markercolor=:green,NodeName=["Clay","Quartz","Calcite"])
+
+p2=triplot(rand(20,3),1,Norm=true)
+plot(p1,p2,layout=(1,2), size=(900,400))
+```
+<img src="Geomechanics_EQ2.PNG"><br>
