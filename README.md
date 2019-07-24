@@ -57,6 +57,32 @@ plot(p1,p2,layout=(1,2), size=(900,400))
 <img src="Geomechanics_EQ2.PNG"><br>
 
 
+## Stress on Fault
+
+You can estimate the Normal (σn) and Shear (τ) stress on a fault with an arbitrary strike and dip direction and plot it on a Mohr circle
+
+```julia
+Data=CSV.read("FractureData.csv")
+first(Data,10)
+```
+<img src="Geomechanics_EQ3.PNG"><br>
+
+```julia
+S=[0.97,0.78,0.6] # Principal Stresses Normal Faulting [Sv, Shmax,Shmin] [psi/ft]
+Pp=0.43           # Pore Pressure [psi]
+μ=0.6             # Coeficient of sliding friction
+a =0              #trend of S1, except when S1 is vertical a = trend of SHmax minus 90 degrees
+b =-90 #-plunge of S1 (plunge is angle from horizontal)
+c =0.0            #rake of S2, 0 if S1 or S3 is vertical, 90 if S2 is vertical
+
+σn, τ, CFF=FaultStress(S,Pp,μ,a,b,c,Data[1:10,:])
+σn2, τ2, CFF2=FaultStress(S,Pp,μ,a,b,c,Data)
+p1=mohr3(S, Pp, μ, σn, τ, CFF, title="3D Mohr Circle first 10 Faults")
+p2=mohr3(S, Pp, μ, σn2, τ2, CFF2, title="3D Mohr Circle all Faults")
+plot(p1,p2, layout=(2,1), size=(700,700))
+```
+ <img src="Geomechanics_EQ4.PNG"><br>
+
 ## References
 
 Zoback, Mark D.. Reservoir Geomechanics. Cambridge University Press, 2014.
