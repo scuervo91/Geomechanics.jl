@@ -5,7 +5,7 @@ using Plots
 using Colors
 using DataFrames
 
-export C, Shmin, Shmax
+export C, Shmin, Shmax, FaultStress
 
 include("Zobackogram.jl")
 include("TriplotRecipe.jl")
