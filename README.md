@@ -69,7 +69,7 @@ first(Data,10)
 
 ```julia
 S=[0.97,0.78,0.6] # Principal Stresses Normal Faulting [Sv, Shmax,Shmin] [psi/ft]
-Pp=0.43           # Pore Pressure [psi]
+Pp=0.43           # Pore Pressure [psi/ft]
 μ=0.6             # Coeficient of sliding friction
 a =0              #trend of S1, except when S1 is vertical a = trend of SHmax minus 90 degrees
 b =-90 #-plunge of S1 (plunge is angle from horizontal)
